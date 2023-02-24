@@ -40,7 +40,7 @@ client.getEntries().then(function (entries) {
       itemDiv.appendChild(link);
 
       var image = document.createElement('img');
-      image.src = entry.fields.image.fields.file.url+"w=300";
+      image.src = entry.fields.image.fields.file.url+"?w=300";
       itemDiv.appendChild(image);
       }
   );
