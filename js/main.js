@@ -22,6 +22,7 @@ client.getEntries({
 client.getEntries().then(function (entries) {
   entries.items.forEach(function (entry) {
       console.log(entry.fields)
+
       var itemDiv = document.createElement('div');
       resourcesDiv.appendChild(itemDiv);
       itemDiv.classList.add('resource-item');
@@ -34,18 +35,36 @@ client.getEntries().then(function (entries) {
       desc.innerHTML = entry.fields.description;
       itemDiv.appendChild(desc);
 
-      var link = document.createElement('a');
-      link.innerHTML = "link to " + entry.fields.name;
-      link.href = entry.fields.link;
-      itemDiv.appendChild(link);
-
       var image = document.createElement('img');
       image.src = entry.fields.image.fields.file.url+"?w=300";
       itemDiv.appendChild(image);
+
+      var link = document.createElement('a');
+      link.innerHTML = "link to " + entry.fields.name;
+      link.href = "details.html?id="+entry.sys.id
+      itemDiv.appendChild(link);
+
       }
   );
 });
 
+/*get details*/
+      var name = document.createElement('h2');
+      name.innerHTML = entry.fields.name;
+      resourceItem.append(name);
+
+      var description = document.createElement('p');
+      description.innerHTML = entry.fields.description;
+      resourceItem.append(description);
+
+      var cover = document.createElement('img');
+      cover.src = "http:"+entry.fields.cover.fields.file.url;
+      resourceItem.append(cover);
+      
+      var details = document.createElement('a');
+      details.innerHTML = "Get Details";
+      details.href = "details.html?id="+entry.sys.id;
+      resourceItem.append(details);
 
 /*
 entries.items.forEach(function (entry) {

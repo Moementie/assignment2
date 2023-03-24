@@ -50,3 +50,21 @@ nav ul {
     height: 300px;
 
 }
+/*---------Details CSS----------*/
+
+#div-to-place-content {
+background-color: plum;  
+   }
+
+
+#div-to-place-content h1{
+
+padding: 1rem;
+    
+   }
+#div-to-place-content p{
+ width: 50%;
+ height: auto  ;
+ padding: 1rem;
+
+}
