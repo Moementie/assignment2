@@ -40,7 +40,7 @@ client.getEntries().then(function (entries) {
       itemDiv.appendChild(image);
 
       var link = document.createElement('a');
-      link.innerHTML = "link to " + entry.fields.name;
+      link.innerHTML = "Learn More! ";
       link.href = "details.html?id="+entry.sys.id
       itemDiv.appendChild(link);
 
@@ -48,7 +48,7 @@ client.getEntries().then(function (entries) {
   );
 });
 
-/*get details*/
+/*get details
       var name = document.createElement('h2');
       name.innerHTML = entry.fields.name;
       resourceItem.append(name);
@@ -65,6 +65,7 @@ client.getEntries().then(function (entries) {
       details.innerHTML = "Get Details";
       details.href = "details.html?id="+entry.sys.id;
       resourceItem.append(details);
+      */
 
 /*
 entries.items.forEach(function (entry) {
